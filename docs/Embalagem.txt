@@ -1,0 +1,33 @@
+//INSERE/ATUALIZA embalagem
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<embalagem xmlns="http://www.setes.com.br/">
+    <EMB_CODIGO>0</EMB_CODIGO>
+    <EMB_CODETB>0</EMB_CODETB>
+    <EMB_DESCRICAO>0</EMB_DESCRICAO>
+    <EMB_ABREVIATURA>0</EMB_ABREVIATURA>
+</embalagem>';
+
+servico(token, 'embalagem', 'I', xml) //INSERT 
+servico(token, 'embalagem', 'U', xml) //UPDATE
+
+//DELETA embalagem
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<embalagem xmlns="http://www.setes.com.br/">                          
+    <EMB_CODIGO>0</EMB_CODIGO>
+</embalagem>';
+servico(token, 'embalagem', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<embalagem xmlns="http://www.setes.com.br/">                          
+    <EMB_CODIGO>0</EMB_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</embalagem>';
+servico(token, 'embalagem', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<embalagem xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_embalagem</QUERY>
+</embalagem>';
+servico(token, 'embalagem', 'C', xml) //CUSTOM

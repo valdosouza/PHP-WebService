@@ -1,0 +1,44 @@
+//INSERE/ATUALIZA PROJETO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<projeto xmlns="http://www.setes.com.br/">
+    <PRJ_CODIGO>0</PRJ_CODIGO>
+    <PRJ_CODETB>0</PRJ_CODETB>
+    <PRJ_NUMERO>0</PRJ_NUMERO>
+    <PRJ_DATA>0</PRJ_DATA>
+    <PRJ_CODETD>0</PRJ_CODETD>
+    <PRJ_CODSIT>0</PRJ_CODSIT>
+    <PRJ_DESCRICAO>0</PRJ_DESCRICAO>
+    <PRJ_DETALHE>0</PRJ_DETALHE>
+    <PRJ_DT_INICIAL>0</PRJ_DT_INICIAL>
+    <PRJ_DT_FINAL>0</PRJ_DT_FINAL>
+    <PRJ_HR_INICIAL>0</PRJ_HR_INICIAL>
+    <PRJ_HR_FINAL>0</PRJ_HR_FINAL>
+    <PRJ_PATH_LOCAL>0</PRJ_PATH_LOCAL>
+    <PRJ_PATH_FTP>0</PRJ_PATH_FTP>
+    <PRJ_ATUALIZACAO>0</PRJ_ATUALIZACAO>
+</projeto>';
+
+servico(token, 'projeto', 'I', xml) //INSERT 
+servico(token, 'projeto', 'U', xml) //UPDATE
+
+//DELETA PROJETO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<projeto xmlns="http://www.setes.com.br/">                          
+    <PRJ_CODIGO>0</PRJ_CODIGO>
+</projeto>';
+servico(token, 'projeto', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<projeto xmlns="http://www.setes.com.br/">                          
+    <PRJ_CODIGO>0</PRJ_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</projeto>';
+servico(token, 'projeto', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<projeto xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_projeto</QUERY>
+</projeto>';
+servico(token, 'projeto', 'C', xml) //CUSTOM

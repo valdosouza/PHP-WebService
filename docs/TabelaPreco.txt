@@ -1,0 +1,35 @@
+//INSERE/ATUALIZA tabelapreco
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tabelapreco xmlns="http://www.setes.com.br/">
+    <TPR_CODIGO>0</TPR_CODIGO>
+    <TPR_CODETB>0</TPR_CODETB>
+    <TPR_CODETD>0</TPR_CODETD>
+    <TPR_NOME>0</TPR_NOME>
+    <TPR_VALIDADE>0</TPR_VALIDADE>
+    <TPR_MODALIDADE>0</TPR_MODALIDADE>
+</tabelapreco>';
+
+servico(token, 'tabelapreco', 'I', xml) //INSERT 
+servico(token, 'tabelapreco', 'U', xml) //UPDATE
+
+//DELETA tabelapreco
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tabelapreco xmlns="http://www.setes.com.br/">                          
+    <TPR_CODIGO>0</TPR_CODIGO>
+</tabelapreco>';
+servico(token, 'tabelapreco', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tabelapreco xmlns="http://www.setes.com.br/">                          
+    <TPR_CODIGO>0</TPR_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</tabelapreco>';
+servico(token, 'tabelapreco', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tabelapreco xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_tabela_preco</QUERY>
+</tabelapreco>';
+servico(token, 'tabelapreco', 'C', xml) //CUSTOM

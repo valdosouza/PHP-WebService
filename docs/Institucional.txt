@@ -1,0 +1,35 @@
+//INSERE/ATUALIZA institucional
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<institucional xmlns="http://www.setes.com.br/">
+    <INS_AREANOME>0</INS_AREANOME>
+    <INS_CODETB>0</INS_CODETB>
+    <INS_TITULO>0</INS_TITULO>
+    <INS_TEXTO>EM_BASE64</INS_TEXTO>
+</institucional>';
+
+servico(token, 'institucional', 'I', xml) //INSERT 
+servico(token, 'institucional', 'U', xml) //UPDATE
+
+//DELETA institucional
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<institucional xmlns="http://www.setes.com.br/">
+    <INS_AREANOME>0</INS_AREANOME>
+    <INS_CODETB>0</INS_CODETB>
+</institucional>';
+servico(token, 'institucional', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<institucional xmlns="http://www.setes.com.br/">
+    <INS_AREANOME>0</INS_AREANOME>
+    <INS_CODETB>0</INS_CODETB>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</institucional>';
+servico(token, 'institucional', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<institucional xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_institucional</QUERY>
+</institucional>';
+servico(token, 'institucional', 'C', xml) //CUSTOM

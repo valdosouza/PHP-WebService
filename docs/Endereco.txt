@@ -1,0 +1,44 @@
+//INSERE/ATUALIZA endereco
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<endereco xmlns="http://www.setes.com.br/">
+    <END_CODIGO>0</END_CODIGO>
+    <END_CODETB>0</END_CODETB>
+    <END_CODETD>0</END_CODETD>
+    <END_TIPO>0</END_TIPO>
+    <END_LOGRAD>0</END_LOGRAD>
+    <END_COMPLEM>0</END_COMPLEM>
+    <END_BAIRRO>0</END_BAIRRO>
+    <END_CEP>0</END_CEP>
+    <END_CONTATO>0</END_CONTATO>
+    <END_PRINCIPAL>0</END_PRINCIPAL>
+    <END_REGIAO>0</END_REGIAO>
+    <END_NUMERO>0</END_NUMERO>
+    <END_CODPAI>0</END_CODPAI>
+    <END_CODCDD>0</END_CODCDD>
+    <END_CODUFE>0</END_CODUFE>
+</endereco>';
+
+servico(token, 'endereco', 'I', xml) //INSERT 
+servico(token, 'endereco', 'U', xml) //UPDATE
+
+//DELETA endereco
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<endereco xmlns="http://www.setes.com.br/">                          
+    <END_CODIGO>0</END_CODIGO>
+</endereco>';
+servico(token, 'endereco', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<endereco xmlns="http://www.setes.com.br/">                          
+    <END_CODIGO>0</END_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</endereco>';
+servico(token, 'endereco', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<endereco xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_endereco</QUERY>
+</endereco>';
+servico(token, 'endereco', 'C', xml) //CUSTOM

@@ -1,0 +1,34 @@
+//INSERE/ATUALIZA clienteinterface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<clienteinterface xmlns="http://www.setes.com.br/">
+    <CIF_CODPRJ>0</CIF_CODPRJ>
+    <CIF_CODCLI>0</CIF_CODCLI>
+    <CIF_CODIFC>0</CIF_CODIFC>
+    <CIF_ATIVO>0</CIF_ATIVO>
+    <CIF_ATUALIZAR>0</CIF_ATUALIZAR>
+</clienteinterface>';
+
+servico(token, 'clienteinterface', 'I', xml) //INSERT 
+servico(token, 'clienteinterface', 'U', xml) //UPDATE
+
+//DELETA clienteinterface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<clienteinterface xmlns="http://www.setes.com.br/">
+    <CIF_CODIGO>0</CIF_CODIGO>
+</clienteinterface>';
+servico(token, 'clienteinterface', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<clienteinterface xmlns="http://www.setes.com.br/">
+    <CIF_CODIGO>0</CIF_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</clienteinterface>';
+servico(token, 'clienteinterface', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<clienteinterface xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_cli_interface</QUERY>
+</clienteinterface>';
+servico(token, 'clienteinterface', 'C', xml) //CUSTOM

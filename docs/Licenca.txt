@@ -1,0 +1,50 @@
+//INSERE/ATUALIZA LICENSA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <LCS_CODIGO>0</LCS_CODIGO>                                      
+    <LCS_CODCLI>0</LCS_CODCLI>                                      
+    <LCS_VOLUME_HD>1</LCS_VOLUME_HD> 
+    <LCS_TIME_INSTALA>0000-00-00</LCS_TIME_INSTALA>                
+    <LCS_IP_INSTALA>255.255.255.255</LCS_IP_INSTALA>             
+    <LCS_LIBERADO>N</LCS_LIBERADO>                                  
+    <LCS_SOLICITA>N</LCS_SOLICITA>                                  
+</licenca>';
+
+servico(token, 'licenca', 'I', xml) //INSERT 
+servico(token, 'licenca', 'U', xml) //UPDATE
+
+//DELETA LICENSA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <LCS_CODIGO>0</LCS_CODIGO>                                                                       
+</licenca>';
+servico(token, 'licenca', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <LCS_CODIGO>0</LCS_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR SE POR VAZIO CONSULTA TUDO (select* from tb_licenca)                                                                    
+</licenca>';
+servico(token, 'licenca', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <QUERY>SELECT * FROM tb_licenca</QUERY>
+</licenca>';
+servico(token, 'licenca', 'C', xml) //CUSTOM
+
+//LIBERADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <LCS_VOLUME_HD>VOLUME DO HD</LCS_VOLUME_HD>
+</licenca>';
+servico(token, 'licenca', 'L', xml) //liberado
+
+//ATUALIZAR CADASTRO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<licenca xmlns="http://www.setes.com.br/">                          
+    <LCS_VOLUME_HD>VOLUME DO HD</LCS_VOLUME_HD>
+</licenca>';
+servico(token, 'licenca', 'A', xml) //ATUALIZAR CADASTRO

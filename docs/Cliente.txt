@@ -1,0 +1,39 @@
+//INSERE/ATUALIZA cliente
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<cliente xmlns="http://www.setes.com.br/">
+    <CLI_CODETD>0</CLI_CODETD>
+    <CLI_CONSUMIDOR>0</CLI_CONSUMIDOR>
+    <CLI_MICRO_EMP>0</CLI_MICRO_EMP>
+    <CLI_ST_CRED>0</CLI_ST_CRED>
+    <CLI_VL_CRED>0</CLI_VL_CRED>
+    <CLI_ML_DRT>0</CLI_ML_DRT>
+    <CLI_CODTRP>0</CLI_CODTRP>
+    <CLI_DT_ULT_MOV>0</CLI_DT_ULT_MOV>
+    <CLI_CODFPG>0</CLI_CODFPG>
+    <CLI_ATIVO>0</CLI_ATIVO>
+</cliente>';
+
+servico(token, 'cliente', 'I', xml) //INSERT
+servico(token, 'cliente', 'U', xml) //UPDATE
+
+//DELETA cliente
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<cliente xmlns="http://www.setes.com.br/">                          
+    <CLI_CODETD>0</CLI_CODETD>
+</cliente>';
+servico(token, 'cliente', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<cliente xmlns="http://www.setes.com.br/">                          
+    <CLI_CODETD>0</CLI_CODETD>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</cliente>';
+servico(token, 'cliente', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<cliente xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_cliente</QUERY>
+</cliente>';
+servico(token, 'cliente', 'C', xml) //CUSTOM

@@ -1,0 +1,32 @@
+//INSERE/ATUALIZA marcaproduto
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<marca xmlns="http://www.setes.com.br/">
+    <MRP_CODIGO>0</MRP_CODIGO>
+    <MRP_CODETD>0</MRP_CODETD>
+    <MRP_DESCRICAO>0</MRP_DESCRICAO>
+</marca>';
+
+servico(token, 'marcaproduto', 'I', xml) //INSERT 
+servico(token, 'marcaproduto', 'U', xml) //UPDATE
+
+//DELETA marca
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<marca xmlns="http://www.setes.com.br/">
+    <MRP_CODIGO>0</MRP_CODIGO>
+</marca>';
+servico(token, 'marcaproduto', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<marca xmlns="http://www.setes.com.br/">
+    <MRP_CODIGO>0</MRP_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</marca>';
+servico(token, 'marcaproduto', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<marca xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_oper_interface</QUERY>
+</marca>';
+servico(token, 'marcaproduto', 'C', xml) //CUSTOM

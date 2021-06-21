@@ -1,0 +1,37 @@
+//INSERE/ATUALIZA fone
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<fone xmlns="http://www.setes.com.br/">
+    <FNE_CODIGO>0</FNE_CODIGO>
+    <FNE_CODETB>0</FNE_CODETB>
+    <FNE_CODETD>0</FNE_CODETD>
+    <FNE_CODEND>0</FNE_CODEND>
+    <FNE_TIPO>0</FNE_TIPO>
+    <FNE_NUMERO>0</FNE_NUMERO>
+    <FNE_RAMAL>0</FNE_RAMAL>
+    <FNE_CONTATO>0</FNE_CONTATO>
+</fone>';
+
+servico(token, 'fone', 'I', xml) //INSERT 
+servico(token, 'fone', 'U', xml) //UPDATE
+
+//DELETA fone
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<fone xmlns="http://www.setes.com.br/">
+    <FNE_CODIGO>0</FNE_CODIGO>
+</fone>';
+servico(token, 'fone', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<fone xmlns="http://www.setes.com.br/">
+    <FNE_CODIGO>0</FNE_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</fone>';
+servico(token, 'fone', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<fone xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_fone</QUERY>
+</fone>';
+servico(token, 'fone', 'C', xml) //CUSTOM

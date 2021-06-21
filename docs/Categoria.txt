@@ -1,0 +1,32 @@
+//INSERE/ATUALIZA categoria
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<categoria xmlns="http://www.setes.com.br/">
+    <CAT_CODIGO>0</CAT_CODIGO>
+    <CAT_CODPAI>0</CAT_CODPAI>
+    <CAT_DESCRICAO>0</CAT_DESCRICAO>
+</categoria>';
+
+servico(token, 'categoria', 'I', xml) //INSERT 
+servico(token, 'categoria', 'U', xml) //UPDATE
+
+//DELETA categoria
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<categoria xmlns="http://www.setes.com.br/">                          
+    <CAT_CODIGO>0</CAT_CODIGO>
+</categoria>';
+servico(token, 'categoria', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<categoria xmlns="http://www.setes.com.br/">                          
+    <CAT_CODIGO>0</CAT_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</categoria>';
+servico(token, 'categoria', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<categoria xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_categoria</QUERY>
+</categoria>';
+servico(token, 'categoria', 'C', xml) //CUSTOM

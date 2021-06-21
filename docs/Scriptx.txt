@@ -1,0 +1,38 @@
+//INSERE Execução do script
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<scriptx xmlns="http://www.setes.com.br/">
+    <SCP_CODIGO>CODIGO DO SCRIPT</SCP_CODIGO>
+    <ETD_CNPJ_CPF>CPF/CNPJ do CLIENTE</ETD_CNPJ_CPF>
+    <SCX_RESULTADO>RESULTADO</SCX_RESULTADO>
+</scriptx>';
+
+servico(token, 'script', 'I', xml) //INSERT 
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<scriptx xmlns="http://www.setes.com.br/">                          
+    <SCX_CODIGO>0</SCX_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</scriptx>';
+servico(token, 'script', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<scriptx xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_scriptx</QUERY>
+</scriptx>';
+servico(token, 'script', 'C', xml) //CUSTOM
+
+//SCRIPTS NAO EXECUTADOS DE UM CLIENTE
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<scriptx xmlns="http://www.setes.com.br/">                          
+    <ETD_CNPJ_CPF>CPF/CNPJ do CLIENTE</ETD_CNPJ_CPF>
+</scriptx>';
+servico(token, 'script', 'N', xml)
+
+//SCRIPTS EXECUTADOS DE UM CLIENTE
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<scriptx xmlns="http://www.setes.com.br/">                          
+    <ETD_CNPJ_CPF>CPF/CNPJ do CLIENTE</ETD_CNPJ_CPF>
+</scriptx>';
+servico(token, 'script', 'E', xml)

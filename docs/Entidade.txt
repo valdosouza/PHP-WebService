@@ -1,0 +1,44 @@
+//INSERE/ATUALIZA entidade
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<entidade xmlns="http://www.setes.com.br/">
+    <ETD_CODIGO>0</ETD_CODIGO>
+    <ETD_CODETB>0</ETD_CODETB>
+    <ETD_CODETD>0</ETD_CODETD>
+    <ETD_PESSOA>0</ETD_PESSOA>
+    <ETD_CNPJ_CPF>0</ETD_CNPJ_CPF>
+    <ETD_INSC_EST_RG>0</ETD_INSC_EST_RG>
+    <ETD_NOME>0</ETD_NOME>
+    <ETD_FANTASIA>0</ETD_FANTASIA>
+    <ETD_RAM_ATIV>0</ETD_RAM_ATIV>
+    <ETD_DT_CADASTRO>0</ETD_DT_CADASTRO>
+    <ETD_SITE>0</ETD_SITE>
+    <ETD_EMAIL>0</ETD_EMAIL>
+    <ETD_OBS>0</ETD_OBS>
+    <ETD_ATIVA>0</ETD_ATIVA>
+    <ETD_DT_ANIV>0</ETD_DT_ANIV>
+</entidade>';
+
+servico(token, 'entidade', 'I', xml) //INSERT 
+servico(token, 'entidade', 'U', xml) //UPDATE
+
+//DELETA entidade
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<entidade xmlns="http://www.setes.com.br/">                          
+    <ETD_CODIGO>0</ETD_CODIGO>
+</entidade>';
+servico(token, 'entidade', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<entidade xmlns="http://www.setes.com.br/">                          
+    <ETD_CODIGO>0</ETD_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</entidade>';
+servico(token, 'entidade', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<entidade xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_entidade</QUERY>
+</entidade>';
+servico(token, 'entidade', 'C', xml) //CUSTOM

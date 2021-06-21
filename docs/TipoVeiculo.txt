@@ -1,0 +1,31 @@
+//INSERE/ATUALIZA tipoveiculo
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tipoveiculo xmlns="http://www.setes.com.br/">
+    <TPV_CODIGO>0</TPV_CODIGO>
+    <TPV_DESCRICAO>0</TPV_DESCRICAO>
+</tipoveiculo>';
+
+servico(token, 'tipoveiculo', 'I', xml) //INSERT 
+servico(token, 'tipoveiculo', 'U', xml) //UPDATE
+
+//DELETA tipoveiculo
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tipoveiculo xmlns="http://www.setes.com.br/">
+    <TPV_CODIGO>0</TPV_CODIGO>
+</tipoveiculo>';
+servico(token, 'tipoveiculo', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tipoveiculo xmlns="http://www.setes.com.br/">
+    <TPV_CODIGO>0</TPV_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</tipoveiculo>';
+servico(token, 'tipoveiculo', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<tipoveiculo xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_tp_veiculo</QUERY>
+</tipoveiculo>';
+servico(token, 'tipoveiculo', 'C', xml) //CUSTOM

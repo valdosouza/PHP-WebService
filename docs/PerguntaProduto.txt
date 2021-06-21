@@ -1,0 +1,48 @@
+//INSERE UMA PERGUNTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <PPR_CODPRO>0</PPR_CODPRO>
+    <PPR_CODCLI>0</PPR_CODCLI>
+    <PPR_PERGUNTA>0</PPR_PERGUNTA>
+</perguntaproduto>';
+
+servico(token, 'perguntaproduto', 'I', xml) //INSERE UMA PERGUNTA
+
+//RESPONDE UMA PERGUNTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <PPR_CODIGO>0</PPR_CODIGO>
+    <PPR_RESPOSTA>0</PPR_RESPOSTA>
+</perguntaproduto>';
+servico(token, 'perguntaproduto', 'U', xml) //UPDATE
+
+//PUBLICA/DESPUBLICA perguntaproduto
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <PPR_CODIGO>0</PPR_CODIGO>
+    <PPR_PUBLICADO>S</PPR_PUBLICADO>
+</perguntaproduto>';
+NOTA: PPR_PUBLICADO = pode ser S ou N
+servico(token, 'perguntaproduto', 'P', xml) //PUBLICA
+
+//DELETA perguntaproduto
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <PPR_CODIGO>0</PPR_CODIGO>
+</perguntaproduto>';
+servico(token, 'perguntaproduto', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <PPR_CODIGO>0</PPR_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</perguntaproduto>';
+servico(token, 'perguntaproduto', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<perguntaproduto xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_pergunta_produto</QUERY>
+</perguntaproduto>';
+servico(token, 'perguntaproduto', 'C', xml) //CUSTOM

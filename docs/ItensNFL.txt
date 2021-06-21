@@ -1,0 +1,50 @@
+//INSERE/ATUALIZA itensnfl
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensnfl xmlns="http://www.setes.com.br/">
+    <ITF_CODIGO>0</ITF_CODIGO>
+    <ITF_CODETB>0</ITF_CODETB>
+    <ITF_CODPED>0</ITF_CODPED>
+    <ITF_CODNFL>0</ITF_CODNFL>
+    <ITF_CODPRO>0</ITF_CODPRO>
+    <ITF_QTDE>0</ITF_QTDE>
+    <ITF_VL_CUSTO>0</ITF_VL_CUSTO>
+    <ITF_VL_UNIT>0</ITF_VL_UNIT>
+    <ITF_DESPACHO>0</ITF_DESPACHO>
+    <ITF_ESTOQUE>0</ITF_ESTOQUE>
+    <ITF_SENTIDO>0</ITF_SENTIDO>
+    <ITF_AQ_COM>0</ITF_AQ_COM>
+    <ITF_VL_DESC>0</ITF_VL_DESC>
+    <ITF_AQ_DESC>0</ITF_AQ_DESC>
+    <ITF_AQ_IPI>0</ITF_AQ_IPI>
+    <ITF_OPER>0</ITF_OPER>
+    <ITF_AQ_ICMS>0</ITF_AQ_ICMS>
+    <ITF_CODEST>0</ITF_CODEST>
+    <ITF_CODTPR>0</ITF_CODTPR>
+    <ITF_ALTURA>0</ITF_ALTURA>
+    <ITF_LARGURA>0</ITF_LARGURA>
+</itensnfl>';
+
+servico(token, 'itensnfl', 'I', xml) //INSERT 
+servico(token, 'itensnfl', 'U', xml) //UPDATE
+
+//DELETA itensnfl
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensnfl xmlns="http://www.setes.com.br/">
+    <ITF_CODIGO>0</ITF_CODIGO>
+</itensnfl>';
+servico(token, 'itensnfl', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensnfl xmlns="http://www.setes.com.br/">
+    <ITF_CODIGO>0</ITF_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</itensnfl>';
+servico(token, 'itensnfl', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensnfl xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_itens_nfl</QUERY>
+</itensnfl>';
+servico(token, 'itensnfl', 'C', xml) //CUSTOM

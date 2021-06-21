@@ -1,0 +1,31 @@
+//INSERE/ATUALIZA operacaointerface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<operacaointerface xmlns="http://www.setes.com.br/">
+    <OPF_CODIGO>0</OPF_CODIGO>
+    <OPF_DESCRICAO>0</OPF_DESCRICAO>
+</operacaointerface>';
+
+servico(token, 'operacaointerface', 'I', xml) //INSERT 
+servico(token, 'operacaointerface', 'U', xml) //UPDATE
+
+//DELETA operacaointerface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<operacaointerface xmlns="http://www.setes.com.br/">
+    <OPF_CODIGO>0</OPF_CODIGO>
+</operacaointerface>';
+servico(token, 'operacaointerface', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<operacaointerface xmlns="http://www.setes.com.br/">
+    <OPF_CODIGO>0</OPF_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</operacaointerface>';
+servico(token, 'operacaointerface', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<operacaointerface xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_oper_interface</QUERY>
+</operacaointerface>';
+servico(token, 'operacaointerface', 'C', xml) //CUSTOM

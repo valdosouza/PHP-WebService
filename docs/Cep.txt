@@ -1,0 +1,3 @@
+//CONSULTA DE CEP
+//o serviço é somente cep com uma string
+cep("88502-120")

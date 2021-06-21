@@ -1,0 +1,38 @@
+//INSERE/ATUALIZA dadossite
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<dadossite xmlns="http://www.setes.com.br/">
+    <DSI_CODETB>0</DSI_CODETB>
+    <DSI_CEP>0</DSI_CEP>
+    <DSI_EMAIL_PGTODIGITAL>0</DSI_EMAIL_PGTODIGITAL>
+    <DSI_TOKEN_PGTODIGITAL>0</DSI_TOKEN_PGTODIGITAL>
+    <DSI_NOMECONTATO>0</DSI_NOMECONTATO>
+    <DSI_EMAILCONTATO>0</DSI_EMAILCONTATO>
+    <DSI_MSNID>0</DSI_MSNID>
+    <DSI_TITULO_SITE>0</DSI_TITULO_SITE>
+    <DSI_RODAPE_SITE>RODAPE_EM_BASE64</DSI_RODAPE_SITE>
+</dadossite>';
+
+servico(token, 'dadossite', 'I', xml) //INSERT 
+servico(token, 'dadossite', 'U', xml) //UPDATE
+
+//DELETA dadossite
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<dadossite xmlns="http://www.setes.com.br/">
+    <DSI_CODETB>0</DSI_CODETB>
+</dadossite>';
+servico(token, 'dadossite', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<dadossite xmlns="http://www.setes.com.br/">
+    <DSI_CODETB>0</DSI_CODETB>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</dadossite>';
+servico(token, 'dadossite', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<dadossite xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_dados_site</QUERY>
+</dadossite>';
+servico(token, 'dadossite', 'C', xml) //CUSTOM

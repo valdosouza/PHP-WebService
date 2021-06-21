@@ -1,0 +1,69 @@
+//INSERIR IMAGEM NO PRODUTO
+
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>       
+	<imagem xmlns="http://www.setes.com.br/">
+		<IMG_CODPRO>2</IMG_CODPRO>
+		<IMG_CODETB>2</IMG_CODETB>
+		<CAPA>S</CAPA>
+		<WIDTH>800</WIDTH>
+		<HEIGHT>600</HEIGHT>
+		<REDIMENSIONA>S</REDIMENSIONA>
+		<IMG>STREAM_EM_BASE64</IMG>
+		<NME>NOMEDAIMAGEM.JPG/BMP/PNG/GIF</NME>
+	</imagem>';
+EXPLICAÇÂO:
+<CAPA>S</CAPA> - 'S' ou 'N' => SETA A IMAGEM INSERIDA COMO CAPA!
+<REDIMENSIONA>S</REDIMENSIONA>  - 'S' ou 'N' => REDIMENSIONA  A IMAGEM - SE A IMAGEM FOR PESADA SEMPRE È BOM REDIMENSIONAR PRA NAO DAR ERRO NO BANCO
+<WIDTH>800</WIDTH> - TAMANHO MAXIMO EM PX DA LARGURA A SER REDIMENSIONADO
+<HEIGHT>600</HEIGHT> - TAMANHO MAXIMO EM PX DA ALTURA A SER REDIMENSIONADO
+
+servico(token, 'imagem', 'IP', xml) //INSERE NO PRODUTO = InsertProduto
+
+//DELETAR IMAGEM DO PRODUTO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>       
+	<imagem xmlns="http://www.setes.com.br/">
+		<IMG_CODIGO>2</IMG_CODIGO>
+		<PRO_CODIGO>2</PRO_CODIGO>
+	</imagem>';
+NOTA: Se a imagem for capa entao seta a capa como 0
+servico(token, 'imagem', 'DP', xml) //DELETA do PRODUTO = DeleteProduto
+
+//SETA IMAGEM COMO CAPA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+	<imagem xmlns="http://www.setes.com.br/">
+		<IMG_CODIGO>2</IMG_CODIGO>
+		<PRO_CODIGO>2</PRO_CODIGO>
+	</imagem>';
+servico(token, 'imagem', 'SC', xml) //SETA CAPA = SetaCapa
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<imagem xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_img_produto</QUERY>
+</imagem>';
+servico(token, 'imagem', 'C', xml) //CUSTOM
+
+
+//INSERIR IMAGENS NO BANNER
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>       
+	<imagem xmlns="http://www.setes.com.br/">
+		<BNI_CODBNR>2</BNI_CODBNR>
+		<WIDTH>1000</WIDTH>
+		<HEIGHT>250</HEIGHT>
+		<REDIMENSIONA>S</REDIMENSIONA>
+		<IMG>STREAM_EM_BASE64</IMG>
+		<NME>NOMEDAIMAGEM.JPG/BMP/PNG/GIF</NME>
+	</imagem>';
+EXPLICAÇÂO:
+<REDIMENSIONA>S</REDIMENSIONA>  - 'S' ou 'N' => REDIMENSIONA  A IMAGEM - SE A IMAGEM FOR PESADA SEMPRE È BOM REDIMENSIONAR PRA NAO DAR ERRO NO BANCO
+<WIDTH>800</WIDTH> - TAMANHO MAXIMO EM PX DA LARGURA A SER REDIMENSIONADO
+<HEIGHT>600</HEIGHT> - TAMANHO MAXIMO EM PX DA ALTURA A SER REDIMENSIONADO
+
+servico(token, 'imagem', 'IB', xml) //INSERE NO BANNER = InsertBanner
+
+//DELETAR IMAGEM DO BANNER
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>       
+	<imagem xmlns="http://www.setes.com.br/">
+		<BNI_CODIGO>2</BNI_CODIGO>
+	</imagem>';
+servico(token, 'imagem', 'DB', xml) //DELETA do BANNER = DeleteBanner

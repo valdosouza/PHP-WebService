@@ -1,0 +1,37 @@
+//INSERE/ATUALIZA banner
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<banner xmlns="http://www.setes.com.br/">
+    <BNR_CODIGO>0</BNR_CODIGO>
+    <BNR_CONTEUDO>ENCODADO_EM_BASE64</BNR_CONTEUDO>
+    <BNR_TIPO>HTML</BNR_TIPO>
+</banner>';
+NOTAS:
+	Se o BNR_CODIGO for 0 ele vai ser o banner default  que aparece na home
+	Se o BNR_CODIGO foi do valor de uma CAT_CODIGO ele irá aparecer na categoria equivalente ao seu codigo
+	BNR_TIPO pode ser: HTML, FLASH e IMAGENS;
+	O BNR_CONTEUDO deve ser codificado em BASE 64 e irá aparecer somente quando o tipo for HTML
+	PARA INSERIR IMAGENS DEVE SE USAR A CLASSE IMAGENS
+servico(token, 'banner', 'I', xml) //INSERT 
+servico(token, 'banner', 'U', xml) //UPDATE
+
+//DELETA banner
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<banner xmlns="http://www.setes.com.br/">                          
+    <BNR_CODIGO>0</BNR_CODIGO>
+</banner>';
+servico(token, 'banner', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<banner xmlns="http://www.setes.com.br/">                          
+    <BNR_CODIGO>0</BNR_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</banner>';
+servico(token, 'banner', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<banner xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_banner</QUERY>
+</banner>';
+servico(token, 'banner', 'C', xml) //CUSTOM

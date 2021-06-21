@@ -1,0 +1,57 @@
+//INSERE/ATUALIZA interface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">
+    <IFC_CODIGO>0</IFC_CODIGO>
+    <IFC_DESCRICAO>0</IFC_DESCRICAO>
+    <IFC_FR_NAME>0</IFC_FR_NAME>
+    <IFC_CODMNU>0</IFC_CODMNU>
+    <IFC_SISTEMA>0</IFC_SISTEMA>
+</interface>';
+
+servico(token, 'interface', 'I', xml) //INSERT 
+servico(token, 'interface', 'U', xml) //UPDATE
+
+//DELETA interface
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">                          
+    <IFC_CODIGO>0</IFC_CODIGO>
+</interface>';
+servico(token, 'interface', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">                          
+    <IFC_CODIGO>0</IFC_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</interface>';
+servico(token, 'interface', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_interface</QUERY>
+</interface>';
+servico(token, 'interface', 'C', xml) //CUSTOM
+
+//ADICIONA CLIENTE NA INTERFACE
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">                          
+    <CIF_CODCLI>0</CIF_CODCLI>
+    <CIF_CODIFC>0</CIF_CODIFC>
+</interface>';
+servico(token, 'interface', 'A', xml)
+
+//REMOVE CLIENTE DA INTERFACE
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">                          
+    <CIF_CODCLI>0</CIF_CODCLI>
+    <CIF_CODIFC>0</CIF_CODIFC>
+</interface>';
+servico(token, 'interface', 'R', xml)
+
+//RETORNA INTERFACES DO CLIENTE
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<interface xmlns="http://www.setes.com.br/">                          
+    <CIF_CODCLI>0</CIF_CODCLI>
+</interface>';
+servico(token, 'interface', 'F', xml)

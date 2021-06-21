@@ -1,0 +1,69 @@
+//INSERE/ATUALIZA produto
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<produto xmlns="http://www.setes.com.br/">
+    <PRO_CODIGO>0</PRO_CODIGO>
+    <PRO_CODETB>0</PRO_CODETB>
+    <PRO_CODIGOFAB>0</PRO_CODIGOFAB>
+    <PRO_CODIGOBAR>0</PRO_CODIGOBAR>
+    <PRO_CODIGOFOR>0</PRO_CODIGOFOR>
+    <PRO_CODIGONCM>0</PRO_CODIGONCM>
+    <PRO_DESCRICAO>0</PRO_DESCRICAO>
+    <PRO_CODMED>0</PRO_CODMED>
+    <PRO_CODEMB>0</PRO_CODEMB>
+    <PRO_CODCAT>0</PRO_CODCAT>
+    <PRO_DIVISOR>0</PRO_DIVISOR>
+    <PRO_ORIGEM>0</PRO_ORIGEM>
+    <PRO_TIPO>0</PRO_TIPO>
+    <PRO_LOCAL>0</PRO_LOCAL>
+    <PRO_PESO>0</PRO_PESO>
+    <PRO_LARGURA>0</PRO_LARGURA>
+    <PRO_COMPRIMENTO>0</PRO_COMPRIMENTO>
+    <PRO_ALTURA>0</PRO_ALTURA>
+    <PRO_VL_FABRICA>0</PRO_VL_FABRICA>
+    <PRO_VL_CUSTOMED>0</PRO_VL_CUSTOMED>
+    <PRO_VL_CUSTOMEDANT>0</PRO_VL_CUSTOMEDANT>
+    <PRO_VL_CUSTO>0</PRO_VL_CUSTO>
+    <PRO_VL_CUSTOANT>0</PRO_VL_CUSTOANT>
+    <PRO_QTDE_MIN>0</PRO_QTDE_MIN>
+    <PRO_DETALHES>0</PRO_DETALHES>
+    <PRO_SUB_TRIB>0</PRO_SUB_TRIB>
+    <PRO_CAMPANHA>0</PRO_CAMPANHA>
+    <PRO_DESTAQUE>0</PRO_DESTAQUE>
+    <PRO_ATIVO>0</PRO_ATIVO>
+    <PRO_IMPRIME>0</PRO_IMPRIME>
+    <PRO_EST_NEG>0</PRO_EST_NEG>
+    <PRO_EXCL_REV>0</PRO_EXCL_REV>
+    <PRO_INTERNET>0</PRO_INTERNET>
+    <PRO_MAISVENDIDO>0</PRO_MAISVENDIDO>
+    <PRO_VL_INSTALA>0</PRO_VL_INSTALA>
+    <PRO_COMPOSICAO>0</PRO_COMPOSICAO>
+    <PRO_APLICACAO>0</PRO_APLICACAO>
+    <PRO_CODMRC>0</PRO_CODMRC>
+    <PRO_TRIBUTACAO>0</PRO_TRIBUTACAO>
+    <PRO_CODIMG_CAPA>0</PRO_CODIMG_CAPA>
+</produto>';
+
+servico(token, 'produto', 'I', xml) //INSERT 
+servico(token, 'produto', 'U', xml) //UPDATE
+
+//DELETA produto
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<produto xmlns="http://www.setes.com.br/">                          
+    <PRO_CODIGO>0</PRO_CODIGO>
+</produto>';
+servico(token, 'produto', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<produto xmlns="http://www.setes.com.br/">                          
+    <PRO_CODIGO>0</PRO_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</produto>';
+servico(token, 'produto', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<produto xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_produto</QUERY>
+</produto>';
+servico(token, 'produto', 'C', xml) //CUSTOM

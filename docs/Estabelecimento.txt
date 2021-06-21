@@ -1,0 +1,36 @@
+//INSERE/ATUALIZA estabelecimento
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estabelecimento xmlns="http://www.setes.com.br/">
+    <ETB_CODIGO>0</ETB_CODIGO>
+    <ETB_CODETD>0</ETB_CODETD>
+    <ETB_INSC_SBT>0</ETB_INSC_SBT>
+    <ETB_INSC_MUN>0</ETB_INSC_MUN>
+    <ETB_COD_FAT>0</ETB_COD_FAT>
+    <ETB_COD_CRT>0</ETB_COD_CRT>
+    <ETB_NOME>ESSE CAMPO É O NOME DA PASTA ONDE ESTA O LAYOUT DO ECOMMERCE</ETB_NOME>
+</estabelecimento>';
+
+servico(token, 'estabelecimento', 'I', xml) //INSERT 
+servico(token, 'estabelecimento', 'U', xml) //UPDATE
+
+//DELETA estabelecimento
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estabelecimento xmlns="http://www.setes.com.br/">
+    <ETB_CODIGO>0</ETB_CODIGO>
+</estabelecimento>';
+servico(token, 'estabelecimento', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estabelecimento xmlns="http://www.setes.com.br/">
+    <ETB_CODIGO>0</ETB_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</estabelecimento>';
+servico(token, 'estabelecimento', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estabelecimento xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_estabelecimento</QUERY>
+</estabelecimento>';
+servico(token, 'estabelecimento', 'C', xml) //CUSTOM

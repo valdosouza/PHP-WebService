@@ -1,0 +1,36 @@
+//INSERE/ATUALIZA estoque
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estoque xmlns="http://www.setes.com.br/">
+    <EST_CODIGO>0</EST_CODIGO>
+    <EST_CODETB>0</EST_CODETB>
+    <EST_CODETS>0</EST_CODETS>
+    <EST_CODPRO>0</EST_CODPRO>
+    <EST_QTDE>0</EST_QTDE>
+    <EST_QTDE_MIN>0</EST_QTDE_MIN>
+    
+</estoque>';
+
+servico(token, 'estoque', 'I', xml) //INSERT 
+servico(token, 'estoque', 'U', xml) //UPDATE
+
+//DELETA estoque
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estoque xmlns="http://www.setes.com.br/">                          
+    <EST_CODIGO>0</EST_CODIGO>
+</estoque>';
+servico(token, 'estoque', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estoque xmlns="http://www.setes.com.br/">                          
+    <EST_CODIGO>0</EST_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</estoque>';
+servico(token, 'estoque', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<estoque xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_estoque</QUERY>
+</estoque>';
+servico(token, 'estoque', 'C', xml) //CUSTOM

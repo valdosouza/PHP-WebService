@@ -1,0 +1,62 @@
+//INSERE/ATUALIZA pagamentodigital
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigital xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+    <data_transacao>0</data_transacao>
+    <data_credito>0</data_credito>
+    <valor_original>0</valor_original>
+    <valor_loja>0</valor_loja>
+    <valor_total>0</valor_total>
+    <desconto>0</desconto>
+    <acrescimo>0</acrescimo>
+    <tipo_pagamento>0</tipo_pagamento>
+    <parcelas>0</parcelas>
+    <cliente_nome>0</cliente_nome>
+    <cliente_email>0</cliente_email>
+    <cliente_rg>0</cliente_rg>
+    <cliente_data_emissao_rg>0</cliente_data_emissao_rg>
+    <cliente_orgao_emissor_rg>0</cliente_orgao_emissor_rg>
+    <cliente_estado_emissor_rg>0</cliente_estado_emissor_rg>
+    <cliente_cpf>0</cliente_cpf>
+    <cliente_sexo>0</cliente_sexo>
+    <cliente_data_nascimento>0</cliente_data_nascimento>
+    <cliente_endereco>0</cliente_endereco>
+    <cliente_complemento>0</cliente_complemento>
+    <status>0</status>
+    <cod_status>0</cod_status>
+    <cliente_bairro>0</cliente_bairro>
+    <cliente_cidade>0</cliente_cidade>
+    <cliente_estado>0</cliente_estado>
+    <cliente_cep>0</cliente_cep>
+    <frete>0</frete>
+    <tipo_frete>0</tipo_frete>
+    <informacoes_loja>0</informacoes_loja>
+    <id_pedido>0</id_pedido>
+    <free>0</free>
+    <email_vendedor>0</email_vendedor>
+</pagamentodigital>';
+NOTA: esses dados nunca serão inseridos ou atualizados manualmente, sempre sera de responsabilidade do pagamento_digital o retorno dos dados
+servico(token, 'pagamentodigital', 'I', xml) //INSERT 
+servico(token, 'pagamentodigital', 'U', xml) //UPDATE
+
+//DELETA pagamentodigital
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigital xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+</pagamentodigital>';
+servico(token, 'pagamentodigital', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigital xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</pagamentodigital>';
+servico(token, 'pagamentodigital', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigital xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_pagamento_digital</QUERY>
+</pagamentodigital>';
+servico(token, 'pagamentodigital', 'C', xml) //CUSTOM

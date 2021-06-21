@@ -1,0 +1,35 @@
+//INSERE/ATUALIZA pagamentodigitalitens
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigitalitens xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+    <produto_codigo>0</produto_codigo>
+    <produto_descricao>0</produto_descricao>
+    <produto_qtde>0</produto_qtde>
+    <produto_valor>0</produto_valor>
+    <produto_extra>0</produto_extra>
+</pagamentodigitalitens>';
+
+servico(token, 'pagamentodigitalitens', 'I', xml) //INSERT 
+servico(token, 'pagamentodigitalitens', 'U', xml) //UPDATE
+
+//DELETA pagamentodigitalitens
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigitalitens xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+</pagamentodigitalitens>';
+servico(token, 'pagamentodigitalitens', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigitalitens xmlns="http://www.setes.com.br/">
+    <id_transacao>0</id_transacao>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</pagamentodigitalitens>';
+servico(token, 'pagamentodigitalitens', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pagamentodigitalitens xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_pagamento_digital_itens</QUERY>
+</pagamentodigitalitens>';
+servico(token, 'pagamentodigitalitens', 'C', xml) //CUSTOM

@@ -1,0 +1,60 @@
+//INSERE/ATUALIZA pedido
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pedido xmlns="http://www.setes.com.br/">
+    <PED_CODIGO>0</PED_CODIGO>
+    <PED_CODETB>0</PED_CODETB>
+    <PED_CODETD>0</PED_CODETD>
+    <PED_NUMERO>0</PED_NUMERO>
+    <PED_TIPO>0</PED_TIPO>
+    <PED_CODUSU>0</PED_CODUSU>
+    <PED_DATA>0</PED_DATA>
+    <PED_CODVDO>0</PED_CODVDO>
+    <PED_CODFPG>0</PED_CODFPG>
+    <PED_PRAZO>0</PED_PRAZO>
+    <PED_CODEND>0</PED_CODEND>
+    <PED_VL_FRETE>0</PED_VL_FRETE>
+    <PED_ALIQ_DESCONTO>0</PED_ALIQ_DESCONTO>
+    <PED_VL_DESCONTO>0</PED_VL_DESCONTO>
+    <PED_VL_PEDIDO>0</PED_VL_PEDIDO>
+    <PED_FATURADO>0</PED_FATURADO>
+    <PED_DT_ENTREGA>0</PED_DT_ENTREGA>
+    <PED_CODTRP>0</PED_CODTRP>
+    <PED_CTA_FRETE>0</PED_CTA_FRETE>
+    <PED_EMUSO>0</PED_EMUSO>
+    <PED_CODENT>0</PED_CODENT>
+    <PED_CODFAT>0</PED_CODFAT>
+    <PED_CODCOB>0</PED_CODCOB>
+    <PED_APROVADO>0</PED_APROVADO>
+    <PED_VL_ODESPESA>0</PED_VL_ODESPESA>
+    <PED_OBS>0</PED_OBS>
+    <PED_AUTORIZADO>0</PED_AUTORIZADO>
+    <PED_CODCEF>0</PED_CODCEF>
+    <PED_ID_ECF>0</PED_ID_ECF>
+    <PED_NUM_ORCA>0</PED_NUM_ORCA>
+    <PED_VALIDADE>0</PED_VALIDADE>
+</pedido>';
+
+servico(token, 'pedido', 'I', xml) //INSERT 
+servico(token, 'pedido', 'U', xml) //UPDATE
+
+//DELETA pedido
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pedido xmlns="http://www.setes.com.br/">
+    <PED_CODIGO>0</PED_CODIGO>
+</pedido>';
+servico(token, 'pedido', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pedido xmlns="http://www.setes.com.br/">
+    <PED_CODIGO>0</PED_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</pedido>';
+servico(token, 'pedido', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<pedido xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_pedido</QUERY>
+</pedido>';
+servico(token, 'pedido', 'C', xml) //CUSTOM

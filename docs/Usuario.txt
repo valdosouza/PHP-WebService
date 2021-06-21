@@ -1,0 +1,43 @@
+//INSERE/ATUALIZA usuario
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<usuario xmlns="http://www.setes.com.br/">
+    <USU_CODIGO>0</USU_CODIGO>
+    <USU_CODETD>0</USU_CODETD>
+    <USU_NOME>0</USU_NOME>
+    <USU_LOGIN>0</USU_LOGIN>
+    <USU_SENHA>ATENCAO A SENHA SERA AUTOMATICAMENTE CONVERTIDA EM MD5</USU_SENHA>
+    <USU_NIVEL>0</USU_NIVEL>
+    <USU_SRV_SMTP>0</USU_SRV_SMTP>
+    <USU_LGN_EMAIL>0</USU_LGN_EMAIL>
+    <USU_PWD_EMAIL>0</USU_PWD_EMAIL>
+    <USU_USU_EMAIL>0</USU_USU_EMAIL>
+    <USU_LBL_EMAIL>0</USU_LBL_EMAIL>
+    <USU_PORTA_EMAIL>0</USU_PORTA_EMAIL>
+    <USU_ATIVO>0</USU_ATIVO>
+    <USU_REQ_AUT_EMAIL>0</USU_REQ_AUT_EMAIL>
+</usuario>';
+
+servico(token, 'usuario', 'I', xml) //INSERT 
+servico(token, 'usuario', 'U', xml) //UPDATE
+
+//DELETA usuario
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<usuario xmlns="http://www.setes.com.br/">
+    <USU_CODIGO>0</USU_CODIGO>
+</usuario>';
+servico(token, 'usuario', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<usuario xmlns="http://www.setes.com.br/">
+    <USU_CODIGO>0</USU_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</usuario>';
+servico(token, 'usuario', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<usuario xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_usuario</QUERY>
+</usuario>';
+servico(token, 'usuario', 'C', xml) //CUSTOM

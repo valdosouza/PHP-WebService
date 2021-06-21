@@ -1,0 +1,7 @@
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<projetocliente xmlns="http://www.setes.com.br/">
+    <PJC_CODPRJ>0</PJC_CODPRJ>
+    <PJC_CODCLI>0</PJC_CODCLI>
+</projetocliente>';
+
+servico(token, 'projetocliente', 'I', xml) //INSERT / ATUALIZA

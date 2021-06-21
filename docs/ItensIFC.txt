@@ -1,0 +1,32 @@
+//INSERE/ATUALIZA itensifc
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensifc xmlns="http://www.setes.com.br/">
+    <IIF_CODIGO>0</IIF_CODIGO>
+    <IIF_CODIFC>0</IIF_CODIFC>
+    <IIF_CODOPF>0</IIF_CODOPF>
+</itensifc>';
+
+servico(token, 'itensifc', 'I', xml) //INSERT 
+servico(token, 'itensifc', 'U', xml) //UPDATE
+
+//DELETA itensifc
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensifc xmlns="http://www.setes.com.br/">
+    <IIF_CODIGO>0</IIF_CODIGO>
+</itensifc>';
+servico(token, 'itensifc', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensifc xmlns="http://www.setes.com.br/">
+    <IIF_CODIGO>0</IIF_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</itensifc>';
+servico(token, 'itensifc', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<itensifc xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_itens_ifc</QUERY>
+</itensifc>';
+servico(token, 'itensifc', 'C', xml) //CUSTOM

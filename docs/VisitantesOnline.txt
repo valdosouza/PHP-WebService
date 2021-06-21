@@ -1,0 +1,11 @@
+Visitantes online tem algumas diferenças, poi so necessitamos consultar a quantidade de pessoas online entao fica assim:
+
+xml = '';  pode ser vazio ou qualquer coisa... pois não fara diferença
+servico(token, 'visitantesonline', '', xml); //a operação tambem pode ser vazia ou qualquer coisa sempre ira retornar o xml abaxio
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<VISITANTESONLINE>
+	<quantidade>0</quantidade>     
+</VISITANTESONLINE>
+
+Onde 0 será a quantidade de pessoas online;

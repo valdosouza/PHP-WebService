@@ -1,0 +1,35 @@
+//INSERE/ATUALIZA SCRIPT
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<script xmlns="http://www.setes.com.br/">
+    <SCP_CODIGO>0</SCP_CODIGO>
+    <SCP_CODPRJ>0</SCP_CODPRJ>
+    <SCP_CODTRF>0</SCP_CODTRF>
+    <SCP_DATATIME>0</SCP_DATATIME>
+    <SCP_COMANDO>0</SCP_COMANDO>
+    <SCP_TIPO>0</SCP_TIPO>
+</script>';
+
+servico(token, 'script', 'I', xml) //INSERT 
+servico(token, 'script', 'U', xml) //UPDATE
+
+//DELETA SCRIPT
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<script xmlns="http://www.setes.com.br/">                          
+    <SCP_CODIGO>0</SCP_CODIGO>
+</script>';
+servico(token, 'script', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<script xmlns="http://www.setes.com.br/">                          
+    <SCP_CODIGO>0</SCP_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</script>';
+servico(token, 'script', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<script xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_script</QUERY>
+</script>';
+servico(token, 'script', 'C', xml) //CUSTOM

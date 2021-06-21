@@ -1,0 +1,34 @@
+//INSERE/ATUALIZA medida
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<medida xmlns="http://www.setes.com.br/">
+    <MED_CODIGO>0</MED_CODIGO>
+    <MED_CODETB>0</MED_CODETB>
+    <MED_DESCRICAO>0</MED_DESCRICAO>
+    <MED_ABREVIATURA>0</MED_ABREVIATURA>
+    <MED_ESCALA>0</MED_ESCALA>
+</medida>';
+
+servico(token, 'medida', 'I', xml) //INSERT 
+servico(token, 'medida', 'U', xml) //UPDATE
+
+//DELETA medida
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<medida xmlns="http://www.setes.com.br/">                          
+    <MED_CODIGO>0</MED_CODIGO>
+</medida>';
+servico(token, 'medida', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<medida xmlns="http://www.setes.com.br/">                          
+    <MED_CODIGO>0</MED_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</medida>';
+servico(token, 'medida', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<medida xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_medida</QUERY>
+</medida>';
+servico(token, 'medida', 'C', xml) //CUSTOM

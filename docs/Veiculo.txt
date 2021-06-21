@@ -1,0 +1,38 @@
+//INSERE/ATUALIZA veiculo
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<veiculo xmlns="http://www.setes.com.br/">
+    <VEI_CODIGO>0</VEI_CODIGO>
+    <VEI_CODCLI>0</VEI_CODCLI>
+    <VEI_PLACA>0</VEI_PLACA>
+    <VEI_FROTA>0</VEI_FROTA>
+    <VEI_CODTPV>0</VEI_CODTPV>
+    <VEI_CODMRC>0</VEI_CODMRC>
+    <VEI_CODMOD>0</VEI_CODMOD>
+    <VEI_ANO>0</VEI_ANO>
+    <VEI_COR>0</VEI_COR>
+</veiculo>';
+
+servico(token, 'veiculo', 'I', xml) //INSERT 
+servico(token, 'veiculo', 'U', xml) //UPDATE
+
+//DELETA veiculo
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<veiculo xmlns="http://www.setes.com.br/">
+    <VEI_CODIGO>0</VEI_CODIGO>
+</veiculo>';
+servico(token, 'veiculo', 'D', xml) //DELETE
+
+//CONSULTA
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<veiculo xmlns="http://www.setes.com.br/">
+    <VEI_CODIGO>0</VEI_CODIGO>
+    ... VAI ADICIONANDO OS CAMPOS QUE QUISER CONSULTAR. SE NAO POR CAMPO NENHUM CONSULTA TUDO
+</veiculo>';
+servico(token, 'veiculo', 'S', xml) //SEARCH
+
+//CUSTOMIZADO
+xml='<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<veiculo xmlns="http://www.setes.com.br/">
+    <QUERY>SELECT * FROM tb_oper_interface</QUERY>
+</veiculo>';
+servico(token, 'veiculo', 'C', xml) //CUSTOM
